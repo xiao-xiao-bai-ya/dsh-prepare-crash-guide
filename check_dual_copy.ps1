@@ -52,7 +52,7 @@ Write-Host '[2/3] 全局 profile 层核心包 —— 这里应该是 Junction，
 Show-Entries -Path $globalCore -ExpectHint '<- 应为软链，按 README 第 7 节修复'
 
 Write-Host ''
-Write-Host '[3/3] 卡自愈的空目录检查（html-void-elements 惯犯）'
+Write-Host '[3/3] 卡自愈的空目录检查（html-void-elements 是已确认的常见案例）'
 $blockerItem = Get-Item $healBlocker
 if ($blockerItem -and -not $blockerItem.LinkType) {
     Write-Host ("    [X ] {0}  非软链目录存在，会卡住 DSH 软链自愈，建议删除" -f $healBlocker) -ForegroundColor Red
